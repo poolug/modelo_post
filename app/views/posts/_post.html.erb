@@ -1,8 +1,8 @@
-<tr id="post-<%= post.id%>">
-  <td><%= post.id%></td>
+<tr id="post-<%= post.id %>">
+  <td><%= post.id %></td>
   <td><%= post.title %></td>
   <td><%= post.content %></td>
   <td><%= link_to 'Ver', post, remote: true, class:"btn btn-info" %></td>
   <td><%= link_to 'Editar', edit_post_path(post), remote: true, class:"btn btn-warning" %></td>
-  <td><%= link_to 'Eliminar', post_path(post), data: { remote: true, confirm: 'Are you sure?' }, method: :delete, class:"btn btn-danger" %></td>
+  <td><%= link_to 'Eliminar', post_path(post), data: { remote: true, confirm: "¿Eliminar el post #{post.title}?" }, method: :delete, class:"btn btn-danger" %></td>
 </tr>

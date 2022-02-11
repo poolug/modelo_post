@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_with(url:"", method: :get, remote: :true, class: 'form-inline') do %>
+  <%= text_field_tag :q, "", class: 'form-control mr-sm-1' %>
+  <%= submit_tag( "Buscar", class: 'btn btn-outline-success my-1 my-sm-0 ') %>
+<% end %>
+
 <%# inserta el formulario de post %>
 <div id="form"></div>
 <%# inserta el post consultado %>

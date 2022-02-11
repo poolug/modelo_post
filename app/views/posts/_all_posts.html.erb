@@ -1,11 +1,10 @@
 <% @posts.each do |post| %>
-  <tr id="post-<%=post.id%>">
-    <td>TODOS</td>
+  <tr id="post-<%=post.id %>">
     <td><%= post.id %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
-    <td><%= link_to 'Ver', post, remote: true, class: 'btn btn-success' %></td>
+    <td><%= link_to 'Ver', post, remote: true, class:"btn btn-info" %></td>
     <td><%= link_to 'Editar', edit_post_path(post), remote: true, class: 'btn btn-warning' %></td>
-    <td><%= link_to 'Eliminar', post, method: :delete, remote: true, data: {confirm: "¿Eliminar el post #{post.title}?"}, class: 'btn btn-danger' %></td>
+    <td><%= link_to 'Eliminar', post, method: :delete, data: { remote: true, confirm: "¿Eliminar el post #{post.title}?"}, class: 'btn btn-danger' %></td>
   </tr>
 <% end %>

@@ -3,7 +3,12 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    # busqueda por contenido o titulo
+    unless params[:q].nil?
+      all_posts = "COALESCE(title, '') LIKE '%" + params[:q] + 
+      "%' OR COALESCE(content, '') LIKE '%" + params[:q] + "%'"
+    end
+    @posts = Post.where(all_posts).order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
