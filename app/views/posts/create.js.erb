@@ -1,4 +1,8 @@
-<%# muestra el  en index y que esconda el formulario %>
+// inserta en el index el post creado
 $('#posts').prepend('<%= j render(@post, t: @post) %>');
-$('#form').empty(500)
-$('#create_post').show(500)
+
+// esconde el formulario
+$('#form').empty(500);
+
+// muestra el botón de New Post
+$('#create_post').slideDown(100);

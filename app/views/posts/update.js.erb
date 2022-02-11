@@ -1,1 +1,5 @@
 document.getElementById('post-<%= @post.id %>').innerHTML = "<%= j render @post %>"
+$('#form').empty(500)
+
+// muestra el botón de New Post luego de editar
+$('#create_post').show(500)

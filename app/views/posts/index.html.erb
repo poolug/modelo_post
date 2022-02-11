@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_with(url:"", method: :get, remote: :true, class: 'form-inline') do %>
+  <%= text_field_tag :q, "", class: 'form-control mr-sm-1' %>
+  <%= submit_tag( "Buscar", class: 'btn btn-outline-success my-1 my-sm-0 ') %>
+<% end %>
+
 <%# inserta el formulario de post %>
 <div id="form"></div>
 <%# inserta el post consultado %>
@@ -10,6 +15,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Content</th>
       <th colspan="3"></th>
@@ -19,6 +25,7 @@
   <tbody id="posts">
     <% @posts.each do |post| %>
       <tr id="post-<%=post.id%>">
+        <td><%=post.id%></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= link_to 'Ver', post, remote: true, class:"btn btn-info" %></td>
