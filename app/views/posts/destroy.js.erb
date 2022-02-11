@@ -1,0 +1,4 @@
+var post_list = document.querySelector('#posts'),
+    target_li = document.getElementById('post-<%= @post.id %>')
+
+post_list.removeChild(target_li)

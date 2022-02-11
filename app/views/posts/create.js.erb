@@ -1,0 +1,4 @@
+<%# muestra el  en index y que esconda el formulario %>
+$('#posts').prepend('<%= j render(@post, t: @post) %>');
+$('#form').empty(500)
+$('#create_post').show(500)
