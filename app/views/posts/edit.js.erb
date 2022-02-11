@@ -1,1 +1,2 @@
-document.getElementById('post-<%= @post.id %>').innerHTML = "<%= j render 'form', post: @post %>"
+$('#form').html('<%= escape_javascript render('posts/edit') %>');
+$('#create_post').slideUp(100);

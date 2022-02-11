@@ -10,6 +10,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Content</th>
       <th colspan="3"></th>
@@ -19,6 +20,7 @@
   <tbody id="posts">
     <% @posts.each do |post| %>
       <tr id="post-<%=post.id%>">
+        <td><%=post.id%></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= link_to 'Ver', post, remote: true, class:"btn btn-info" %></td>
